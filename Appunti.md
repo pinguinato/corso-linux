@@ -27,6 +27,19 @@ Esempio di uso:
 
         cat /proc/ioports
 
+All'interno di questo file vediamo ogni dispositivo e il suo corrispettivo spazio in memoria. Una volta che un dispositivo ha mandato 
+l'interrupt alla CPU, la CPU deve mediare il trasferimento di dati tra la periferica e la memoria e questo è lo scopo delle IO ports, 
+cioè fornire ad un device un range di memoria in cui possa essere assegnato. 
 
+Esempio:
+
+
+        0000-0000 : dma1
+        0000-0000 : pic1
+        0000-0000 : timer0
+        0000-0000 : timer1
+
+Ognuno di questi indirizzi in memoria non deve essere condivisibile con altri. Sono riservati, altrimenti ci sarebbero dei 
+grossi problemi di conflitto.
 
 
